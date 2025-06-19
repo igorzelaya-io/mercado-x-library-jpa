@@ -1,4 +1,12 @@
 package hn.shadowcore.mercadoxlibrary.jpa.repository;
 
-public class UserRepository {
+import hn.shadowcore.mercadoxlibrary.entity.model.auth.User;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+import java.util.UUID;
+
+@Repository
+public interface UserRepository extends BaseRepository<User, UUID>{
+    Optional<User> findByUsername(String username);
 }
