@@ -15,9 +15,7 @@ public class QueryDslConfig {
 
     @Bean
     public JPAQueryFactory jpaQueryFactory() {
-        javax.persistence.EntityManager javaxManager = entityManager
-                .unwrap(javax.persistence.EntityManager.class);
-        return new JPAQueryFactory(javaxManager);
+        return new JPAQueryFactory(entityManager);
     }
 
 }

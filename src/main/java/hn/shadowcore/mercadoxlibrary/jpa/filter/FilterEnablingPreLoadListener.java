@@ -1,6 +1,6 @@
 package hn.shadowcore.mercadoxlibrary.jpa.filter;
 
-import com.example.mercadoxcontext.utils.OrgIdContextHolder;
+import hn.shadowcore.mercadoxcontext.utils.OrgIdContextHolder;
 import org.hibernate.Session;
 import org.hibernate.event.spi.PreLoadEvent;
 import org.hibernate.event.spi.PreLoadEventListener;
@@ -14,7 +14,7 @@ public class FilterEnablingPreLoadListener implements PreLoadEventListener {
         Session session = preLoadEvent.getSession();
 
         if(Optional.ofNullable(session.getEnabledFilter("enabledEntityFilter")).isEmpty()) {
-            session.enableFilter("softDeleteFilter")
+            session.enableFilter("enabledEntityFilter")
                     .setParameter("enabled", true);
         }
         if(Optional.ofNullable(session.getEnabledFilter("orgIdFilter")).isEmpty()
