@@ -10,5 +10,7 @@ import java.util.UUID;
 public interface UserRepository extends BaseRepository<User, UUID> {
     Optional<User> findByUsername(String username);
 
+    Optional<User> findByIdAndEnabled(UUID uuid, boolean enabled);
+
     Optional<User> findByEmail(String email);
 }
