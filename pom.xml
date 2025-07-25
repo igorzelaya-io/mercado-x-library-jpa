@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>hn.shadowcore</groupId>
   <artifactId>mercado-x-library-jpa</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <name>Archetype - mercado-x-library-jpa</name>
@@ -35,6 +34,11 @@
     </dependency>
 
     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>hn.shadowcore</groupId>
       <artifactId>mercado-x-library-entity</artifactId>
       <version>1.0.0-SNAPSHOT</version>
@@ -43,7 +47,7 @@
     <dependency>
       <groupId>hn.shadowcore</groupId>
       <artifactId>mercado-x-context</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>1.0.1-SNAPSHOT</version>
     </dependency>
 
     <dependency>
@@ -67,13 +71,6 @@
     <dependency>
       <groupId>org.hibernate.orm</groupId>
       <artifactId>hibernate-core</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.persistence</groupId>
-      <artifactId>javax.persistence-api</artifactId>
-      <version>2.2</version>
-      <scope>provided</scope> <!-- Important: only at compile-time -->
     </dependency>
 
     <dependency>
@@ -121,8 +118,8 @@
               <version>0.2.0</version>
             </path>
           </annotationProcessorPaths>
-          <source>11</source>
-          <target>11</target>
+          <source>17</source>
+          <target>17</target>
         </configuration>
       </plugin>
     </plugins>

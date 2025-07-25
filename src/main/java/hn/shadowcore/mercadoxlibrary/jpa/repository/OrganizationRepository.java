@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface OrganizationRepository extends BaseRepository<Organization, UUID> {
+public interface OrganizationRepository extends BaseRepository<Organization, UUID>, CustomOrgRepository {
     Optional<Organization> findByNameContainingIgnoreCase(String name);
+
 }

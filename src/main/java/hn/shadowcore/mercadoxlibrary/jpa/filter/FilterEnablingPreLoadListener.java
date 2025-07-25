@@ -22,7 +22,6 @@ public class FilterEnablingPreLoadListener implements PreLoadEventListener {
                 session.enableFilter("orgIdFilter")
                         .setParameter("orgId", OrgIdContextHolder.getTenantId());
             }
-
     }
 
 }
