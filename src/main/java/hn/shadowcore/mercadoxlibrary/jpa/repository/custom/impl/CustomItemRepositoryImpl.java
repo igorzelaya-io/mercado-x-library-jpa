@@ -1,4 +1,4 @@
-package hn.shadowcore.mercadoxlibrary.jpa.repository.impl;
+package hn.shadowcore.mercadoxlibrary.jpa.repository.custom.impl;
 
 import hn.shadowcore.mercadoxcontext.utils.OrgIdContextHolder;
 import hn.shadowcore.mercadoxlibrary.entity.model.core.Inventory;
@@ -7,7 +7,7 @@ import hn.shadowcore.mercadoxlibrary.entity.model.core.QInventory;
 import hn.shadowcore.mercadoxlibrary.entity.model.core.QItem;
 import hn.shadowcore.mercadoxlibrary.jpa.predicate.ItemPredicateFactory;
 import hn.shadowcore.mercadoxlibrary.jpa.querydsl.OrgAwareQueryFactory;
-import hn.shadowcore.mercadoxlibrary.jpa.repository.CustomItemRepository;
+import hn.shadowcore.mercadoxlibrary.jpa.repository.custom.CustomItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.common.errors.ResourceNotFoundException;
 
@@ -15,14 +15,13 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RequiredArgsConstructor
-public class ItemRepositoryImpl implements CustomItemRepository {
+public class CustomItemRepositoryImpl implements CustomItemRepository {
 
     private static final QItem item = QItem.item;
 
     private final OrgAwareQueryFactory jpaQueryFactory;
 
     private final ItemPredicateFactory itemPredicateFactory;
-
 
     @Override
     public Item findItemWithInventory(String itemId) {

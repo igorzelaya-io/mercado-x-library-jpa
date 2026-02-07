@@ -1,6 +1,7 @@
 package hn.shadowcore.mercadoxlibrary.jpa.repository;
 
 import hn.shadowcore.mercadoxlibrary.entity.model.core.Item;
+import hn.shadowcore.mercadoxlibrary.jpa.repository.custom.CustomItemRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
