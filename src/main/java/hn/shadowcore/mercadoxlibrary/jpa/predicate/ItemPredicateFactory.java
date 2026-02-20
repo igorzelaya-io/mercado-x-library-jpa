@@ -3,11 +3,9 @@ package hn.shadowcore.mercadoxlibrary.jpa.predicate;
 
 import com.querydsl.core.types.dsl.BooleanExpression;
 import hn.shadowcore.mercadoxlibrary.entity.model.core.QItem;
-import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-@Component
 public class ItemPredicateFactory {
 
     public BooleanExpression inStock() {

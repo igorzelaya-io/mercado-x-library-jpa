@@ -2,13 +2,13 @@ package hn.shadowcore.mercadoxlibrary.jpa.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -19,10 +19,14 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 
-@Profile("!test")
 @Configuration
-@EnableJpaRepositories(basePackages = "hn.shadowcore.mercadoxlibrary.jpa")
-@EntityScan(basePackages = "hn.shadowcore.mercadoxlibrary.entity")
+@Profile("!test")
+@Import(QueryDSLInfrastructureConfig.class)
+@ConditionalOnProperty(
+        name = "mercadox.jpa.enabled",
+        havingValue = "true",
+        matchIfMissing = true
+)
 @EnableAspectJAutoProxy
 @EnableTransactionManagement
 public class JpaConfig {

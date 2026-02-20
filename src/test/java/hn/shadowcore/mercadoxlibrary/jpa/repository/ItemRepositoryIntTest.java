@@ -3,19 +3,16 @@ package hn.shadowcore.mercadoxlibrary.jpa.repository;
 import hn.shadowcore.mercadoxlibrary.entity.model.core.Category;
 import hn.shadowcore.mercadoxlibrary.entity.model.core.Inventory;
 import hn.shadowcore.mercadoxlibrary.entity.model.core.Item;
-import hn.shadowcore.mercadoxlibrary.jpa.config.JpaConfig;
-import hn.shadowcore.mercadoxlibrary.jpa.querydsl.OrgAwareQueryFactory;
+import hn.shadowcore.mercadoxlibrary.jpa.repository.base.H2BaseJpaIntegrationTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = { JpaConfig.class, OrgAwareQueryFactory.class, ItemRepository.class })
-class ItemRepositoryIntTest extends BaseJpaIntegrationTest {
+class ItemRepositoryIntTest extends H2BaseJpaIntegrationTest {
 
     @Autowired
     private ItemRepository itemRepository;

@@ -4,11 +4,9 @@ import hn.shadowcore.mercadoxlibrary.entity.model.auth.Organization;
 import hn.shadowcore.mercadoxlibrary.entity.model.auth.User;
 import hn.shadowcore.mercadoxlibrary.entity.model.auth.UserType;
 import hn.shadowcore.mercadoxlibrary.entity.model.enums.UserTypeName;
-
-import hn.shadowcore.mercadoxlibrary.jpa.config.JpaConfig;
+import hn.shadowcore.mercadoxlibrary.jpa.repository.base.H2BaseJpaIntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -16,9 +14,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
-@SpringBootTest(classes = {JpaConfig.class, UserRepository.class })
-class UserRepositoryIntTest extends BaseJpaIntegrationTest {
+class UserRepositoryIntTest extends H2BaseJpaIntegrationTest {
 
     @Autowired
     private UserRepository userRepository;
@@ -32,7 +28,8 @@ class UserRepositoryIntTest extends BaseJpaIntegrationTest {
                 .userType(UserType.builder()
                         .name(UserTypeName.BUYER)
                         .build())
-                .createdAt(Timestamp.valueOf(LocalDateTime.now())).organization(organization)
+                .createdAt(Timestamp.valueOf(LocalDateTime.now()))
+                .organization(secondaryOrg)
                 .build();
 
         persistAll(invalidUser);
@@ -42,7 +39,7 @@ class UserRepositoryIntTest extends BaseJpaIntegrationTest {
         List<User> results = userRepository.findAll();
 
         assertThat(results).hasSize(1);
-        assertThat(results.get(0).getFirstName()).isEqualTo("Testing");
+        assertThat(results.get(0).getFirstName()).isEqualTo("Test");
     }
 
     @Test

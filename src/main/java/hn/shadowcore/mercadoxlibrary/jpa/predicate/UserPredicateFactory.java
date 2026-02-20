@@ -3,11 +3,9 @@ package hn.shadowcore.mercadoxlibrary.jpa.predicate;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import hn.shadowcore.mercadoxlibrary.entity.model.auth.QUser;
 import hn.shadowcore.mercadoxlibrary.entity.model.enums.UserTypeName;
-import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-@Component
 public class UserPredicateFactory {
 
     public BooleanExpression isActive(QUser qUser) {

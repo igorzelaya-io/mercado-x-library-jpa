@@ -1,18 +1,15 @@
 package hn.shadowcore.mercadoxlibrary.jpa.repository;
 
 import hn.shadowcore.mercadoxlibrary.entity.model.auth.Organization;
-import hn.shadowcore.mercadoxlibrary.jpa.config.JpaConfig;
-import hn.shadowcore.mercadoxlibrary.jpa.querydsl.OrgAwareQueryFactory;
+import hn.shadowcore.mercadoxlibrary.jpa.repository.base.H2BaseJpaIntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = { JpaConfig.class, OrgAwareQueryFactory.class, OrganizationRepository.class })
-class OrganizationRepositoryIntTest extends BaseJpaIntegrationTest {
+class OrganizationRepositoryIntTest extends H2BaseJpaIntegrationTest {
 
     @Autowired
     private OrganizationRepository organizationRepository;
@@ -30,7 +27,7 @@ class OrganizationRepositoryIntTest extends BaseJpaIntegrationTest {
 
         List<Organization> orgs = organizationRepository.findAll();
 
-        assertThat(orgs).hasSize(1);
+        assertThat(orgs).hasSize(2);
         assertThat(orgs.get(0).getName()).isEqualTo(organization.getName());
 
     }

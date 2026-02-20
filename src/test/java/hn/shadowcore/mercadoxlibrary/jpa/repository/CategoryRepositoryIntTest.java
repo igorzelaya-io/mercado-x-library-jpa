@@ -1,20 +1,17 @@
 package hn.shadowcore.mercadoxlibrary.jpa.repository;
 
 
-import hn.shadowcore.mercadoxlibrary.entity.model.TenantBaseEntity;
 import hn.shadowcore.mercadoxlibrary.entity.model.auth.Organization;
 import hn.shadowcore.mercadoxlibrary.entity.model.core.Category;
-import hn.shadowcore.mercadoxlibrary.jpa.config.JpaConfig;
+import hn.shadowcore.mercadoxlibrary.jpa.repository.base.H2BaseJpaIntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = {JpaConfig.class, CategoryRepository.class})
-class CategoryRepositoryIntTest extends BaseJpaIntegrationTest {
+class CategoryRepositoryIntTest extends H2BaseJpaIntegrationTest {
 
     @Autowired
     private CategoryRepository categoryRepository;

@@ -4,22 +4,16 @@ import hn.shadowcore.mercadoxlibrary.entity.model.core.NotificationTemplate;
 import hn.shadowcore.mercadoxlibrary.entity.model.enums.LanguageKey;
 import hn.shadowcore.mercadoxlibrary.entity.model.enums.NotificationTemplateName;
 import hn.shadowcore.mercadoxlibrary.entity.model.enums.TemplateChannel;
-import hn.shadowcore.mercadoxlibrary.jpa.config.JpaConfig;
-import hn.shadowcore.mercadoxlibrary.jpa.querydsl.OrgAwareQueryFactory;
+import hn.shadowcore.mercadoxlibrary.jpa.repository.base.H2BaseJpaIntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.jdbc.Sql;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = { JpaConfig.class, OrgAwareQueryFactory.class, NotificationTemplateRepository.class })
-@Sql(scripts = { "classpath:schema.sql", "classpath:sequence-reset.sql" },
-        executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD )
-class NotificationTemplateRepositoryIntTest extends BaseJpaIntegrationTest {
+class NotificationTemplateRepositoryIntTest extends H2BaseJpaIntegrationTest {
 
     @Autowired
     private NotificationTemplateRepository templateRepository;

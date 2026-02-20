@@ -1,17 +1,15 @@
 package hn.shadowcore.mercadoxlibrary.jpa.repository;
 
-import com.redis.testcontainers.RedisContainer;
-import hn.shadowcore.mercadoxcontext.config.RedisConfig;
 import hn.shadowcore.mercadoxlibrary.entity.response.dto.CartDto;
 import hn.shadowcore.mercadoxlibrary.entity.response.dto.ItemDto;
-import hn.shadowcore.mercadoxlibrary.jpa.config.JpaConfig;
+import hn.shadowcore.mercadoxlibrary.jpa.repository.base.RedisContainerTest;
 import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
-import org.testcontainers.junit.jupiter.Testcontainers;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -20,9 +18,12 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
-@Import(RedisConfig.class)
-@SpringBootTest(classes = {JpaConfig.class, RedisConfig.class, CartRedisRepository.class})
-class CartRedisRepositoryIntTest extends BaseJpaIntegrationTest {
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = {
+                CartRedisRepository.class,
+                RedisContainerTest.RedisContainerConfig.class
+        })
+class CartRedisRepositoryIntTest extends RedisContainerTest {
 
     @Autowired
     private CartRedisRepository redisRepository;
@@ -70,6 +71,9 @@ class CartRedisRepositoryIntTest extends BaseJpaIntegrationTest {
     }
 
     private void buildEnv() {
+
+        user = buildBaseUser();
+        user.setId(UUID.randomUUID());
 
         itemDto = ItemDto.builder()
                 .id(UUID.randomUUID().toString())

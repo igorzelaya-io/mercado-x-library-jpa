@@ -3,11 +3,9 @@ package hn.shadowcore.mercadoxlibrary.jpa.repository;
 import hn.shadowcore.mercadoxlibrary.entity.model.auth.User;
 import hn.shadowcore.mercadoxlibrary.entity.model.core.Order;
 import hn.shadowcore.mercadoxlibrary.entity.model.enums.OrderStatus;
-import hn.shadowcore.mercadoxlibrary.jpa.config.JpaConfig;
-import hn.shadowcore.mercadoxlibrary.jpa.querydsl.OrgAwareQueryFactory;
+import hn.shadowcore.mercadoxlibrary.jpa.repository.base.H2BaseJpaIntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -16,8 +14,7 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = { JpaConfig.class, OrgAwareQueryFactory.class, OrderRepository.class })
-class OrderRepositoryIntTest extends BaseJpaIntegrationTest {
+class OrderRepositoryIntTest extends H2BaseJpaIntegrationTest {
 
     @Autowired
     private OrderRepository orderRepository;

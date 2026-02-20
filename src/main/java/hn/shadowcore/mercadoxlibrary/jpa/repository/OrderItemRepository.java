@@ -6,9 +6,4 @@ import hn.shadowcore.mercadoxlibrary.entity.model.core.OrderItemsKey;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface OrderItemRepository extends BaseRepository<OrderItem, OrderItemsKey> {
-
-
-
-
-}
+public interface OrderItemRepository extends BaseRepository<OrderItem, OrderItemsKey> { }

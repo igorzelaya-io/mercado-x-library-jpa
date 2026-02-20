@@ -1,1 +1,0 @@
-ALTER SEQUENCE core.notification_template_id_seq RESTART WITH 1;

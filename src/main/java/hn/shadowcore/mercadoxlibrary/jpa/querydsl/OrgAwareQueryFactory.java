@@ -5,11 +5,10 @@ import com.querydsl.core.types.dsl.ComparablePath;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import hn.shadowcore.mercadoxcontext.utils.OrgIdContextHolder;
-import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
-@Component
+
 public class OrgAwareQueryFactory {
 
     private final JPAQueryFactory delegate;
