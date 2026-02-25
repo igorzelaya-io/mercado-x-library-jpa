@@ -18,11 +18,11 @@ public class CustomNotificationTemplateRepositoryImpl implements CustomNotificat
     private static final QNotificationTemplate qNotificationTemplate = QNotificationTemplate.notificationTemplate;
 
     @Override
-    public NotificationTemplate findByNameAndChannel
+    public NotificationTemplate findByOrgIdNameAndChannel
             (String name, TemplateChannel templateChannel) {
         return Optional.ofNullable(queryFactory.selectFrom(qNotificationTemplate, qNotificationTemplate.orgId)
                 .where(qNotificationTemplate.active.isTrue()
-                        .and(qNotificationTemplate.name.equalsIgnoreCase(name)
+                        .and(qNotificationTemplate.templateKey.equalsIgnoreCase(name)
                                 .and(qNotificationTemplate.templateChannel.eq(templateChannel))))
                 .fetchOne())
                 .orElseThrow(() -> new ResourceNotFoundException(String

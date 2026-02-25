@@ -23,7 +23,7 @@ class NotificationTemplateRepositoryIntTest extends H2BaseJpaIntegrationTest {
 
         final NotificationTemplate invalidTemplate = NotificationTemplate
                 .builder()
-                .name(NotificationTemplateName.ORDER_CONFIRMATION_TEMPLATE.getValue())
+                .templateKey(NotificationTemplateName.ORDER_CONFIRMATION_TEMPLATE.toString())
                 .templateChannel(TemplateChannel.WHATSAPP)
                 .languageCode(LanguageKey.SPANISH_MEX.getName())
                 .subject("Invalid template")
@@ -32,7 +32,7 @@ class NotificationTemplateRepositoryIntTest extends H2BaseJpaIntegrationTest {
                 .build();
 
         final NotificationTemplate template = NotificationTemplate.builder()
-                .name(NotificationTemplateName.USER_VALIDATION_TEMPLATE.getValue())
+                .templateKey(NotificationTemplateName.USER_VALIDATION_TEMPLATE.toString())
                 .templateChannel(TemplateChannel.EMAIL)
                 .languageCode(LanguageKey.ENGLISH.getName())
                 .subject("Test Email !")
@@ -46,7 +46,8 @@ class NotificationTemplateRepositoryIntTest extends H2BaseJpaIntegrationTest {
         persistAll(template, invalidTemplate);
 
         NotificationTemplate retrievedTemplate = templateRepository
-                .findByNameAndChannel(NotificationTemplateName.USER_VALIDATION_TEMPLATE.getValue(), TemplateChannel.EMAIL);
+                .findByOrgIdNameAndChannel(NotificationTemplateName.USER_VALIDATION_TEMPLATE.toString(),
+                        TemplateChannel.EMAIL);
 
         assertThat(retrievedTemplate).isNotNull();
         assertThat(retrievedTemplate.getOrgId()).isEqualTo(organization.getId());
