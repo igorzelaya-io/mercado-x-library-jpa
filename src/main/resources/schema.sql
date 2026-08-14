@@ -105,7 +105,7 @@ CREATE TABLE auth.branch (
 );
 
 CREATE TABLE auth.audit_log (
-                                id BIGINT DEFAULT (NEXT VALUE FOR auth.audit_log_seq) PRIMARY KEY,
+                                id BIGINT DEFAULT nextval('auth.audit_log_seq') PRIMARY KEY,
                                 user_id UUID,
                                 org_id UUID,
 
@@ -123,7 +123,7 @@ CREATE TABLE auth.audit_log (
 
 
 CREATE TABLE auth.refresh_tokens (
-                                     id BIGINT DEFAULT (NEXT VALUE FOR auth.refresh_token_seq) PRIMARY KEY,
+                                     id BIGINT DEFAULT nextval('auth.refresh_token_seq') PRIMARY KEY,
                                      org_id UUID NOT NULL,
                                      user_id UUID NOT NULL,
                                      expires_at TIMESTAMP NOT NULL,
@@ -135,6 +135,18 @@ CREATE TABLE auth.refresh_tokens (
                                      CONSTRAINT fk_refresh_token_user
                                          FOREIGN KEY (user_id)
                                              REFERENCES auth.users(id)
+);
+
+CREATE TABLE auth.user_notification_preference (
+                                                    id UUID PRIMARY KEY,
+                                                    user_id UUID NOT NULL,
+                                                    channel VARCHAR(50) NOT NULL,
+                                                    enabled BOOLEAN NOT NULL,
+                                                    CONSTRAINT fk_user_notification_preference_user
+                                                        FOREIGN KEY (user_id)
+                                                            REFERENCES auth.users(id),
+                                                    CONSTRAINT uq_user_notification_preference
+                                                        UNIQUE(user_id, channel)
 );
 
 CREATE INDEX idx_branch_org_id ON auth.branch(org_id);
@@ -359,7 +371,7 @@ CREATE TABLE core.appointment (
 );
 
 CREATE TABLE core.notification_template (
-                                            id BIGINT DEFAULT (NEXT VALUE FOR core.notification_template_id_seq) PRIMARY KEY,
+                                            id BIGINT DEFAULT nextval('core.notification_template_id_seq') PRIMARY KEY,
                                             template_key VARCHAR(100) NOT NULL,
                                             channel VARCHAR(50) NOT NULL,
                                             language_code VARCHAR(10) NOT NULL,
