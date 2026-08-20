@@ -5,6 +5,7 @@
 CREATE SCHEMA IF NOT EXISTS auth;
 CREATE SCHEMA IF NOT EXISTS core;
 CREATE SCHEMA IF NOT EXISTS invoicing;
+CREATE SCHEMA IF NOT EXISTS ai;
 
 /* =========================================================
    SEQUENCES
@@ -450,3 +451,45 @@ CREATE TABLE invoicing.payment (
                                        FOREIGN KEY (invoice_id)
                                            REFERENCES invoicing.invoice(id)
 );
+
+/* =========================================================
+   AI SCHEMA
+   ========================================================= */
+
+CREATE TABLE ai.organization_whatsapp_config (
+    id                              UUID        NOT NULL PRIMARY KEY,
+    organization_id                 UUID        NOT NULL,
+    phone_number_id                 VARCHAR(64) NOT NULL UNIQUE,
+    waba_id                         VARCHAR(64) NOT NULL,
+    ai_enabled                      BOOLEAN     NOT NULL DEFAULT FALSE,
+    default_reengagement_template   VARCHAR(255)
+);
+
+CREATE INDEX idx_owc_organization_id ON ai.organization_whatsapp_config (organization_id);
+
+CREATE TABLE ai.conversation (
+    id                    UUID        NOT NULL PRIMARY KEY,
+    org_id                UUID        NOT NULL,
+    channel               VARCHAR(16) NOT NULL,
+    external_contact_id   VARCHAR(64) NOT NULL,
+    lead_id               UUID,
+    status                VARCHAR(16) NOT NULL DEFAULT 'ACTIVE',
+    last_inbound_at       TIMESTAMP
+);
+
+CREATE UNIQUE INDEX idx_conv_org_channel_contact
+    ON ai.conversation (org_id, channel, external_contact_id);
+
+CREATE INDEX idx_conv_org_id ON ai.conversation (org_id);
+
+CREATE TABLE ai.conversation_message (
+    id                    UUID        NOT NULL PRIMARY KEY,
+    conversation_id       UUID        NOT NULL REFERENCES ai.conversation(id),
+    role                  VARCHAR(16) NOT NULL,
+    content               TEXT        NOT NULL,
+    anthropic_message_id  VARCHAR(128),
+    created_at            TIMESTAMP   NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_cmsg_conversation_id_created_at
+    ON ai.conversation_message (conversation_id, created_at ASC);
