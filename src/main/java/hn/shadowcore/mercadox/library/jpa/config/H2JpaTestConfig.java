@@ -12,7 +12,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -21,6 +22,9 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -34,7 +38,7 @@ public class H2JpaTestConfig {
 
     @Bean
     @Primary
-    public DataSource dataSource() {
+    public DataSource dataSource() throws IOException {
 
         DataSource ds = DataSourceBuilder.create()
                 .driverClassName("org.h2.Driver")
@@ -42,8 +46,15 @@ public class H2JpaTestConfig {
                 .username("sa")
                 .password("").build();
 
+        Resource[] scripts = new PathMatchingResourcePatternResolver()
+                .getResources("classpath:db/migration/*.sql");
+        Arrays.sort(scripts, Comparator.comparingInt(r -> {
+            String name = r.getFilename();
+            return Integer.parseInt(name.substring(1, name.indexOf('_')));
+        }));
+
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-        populator.addScript(new ClassPathResource("schema.sql"));
+        populator.addScripts(scripts);
         populator.setContinueOnError(false);
 
         DatabasePopulatorUtils.execute(populator, ds);

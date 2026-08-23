@@ -1,0 +1,272 @@
+{
+  "pom.xml": {
+    "mtime": 1786714760.3944137,
+    "ast_hash": "ec53add1c8368ed7a08dc2f89a148c77",
+    "semantic_hash": "ec53add1c8368ed7a08dc2f89a148c77"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/aspect/HibernateFilterAspect.java": {
+    "mtime": 1786714760.395077,
+    "ast_hash": "8ee2bd3c930de586e333201d902acbb8",
+    "semantic_hash": "8ee2bd3c930de586e333201d902acbb8"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/aspect/HibernateFilterDisablingAspect.java": {
+    "mtime": 1786714760.395286,
+    "ast_hash": "23b5d8c50ecd1f2a092d135f4f93c3fa",
+    "semantic_hash": "23b5d8c50ecd1f2a092d135f4f93c3fa"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/config/H2JpaTestConfig.java": {
+    "mtime": 1786714760.395721,
+    "ast_hash": "bf012d05ce9802d89017368fadba65e4",
+    "semantic_hash": "bf012d05ce9802d89017368fadba65e4"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/config/JpaConfig.java": {
+    "mtime": 1786714760.3958871,
+    "ast_hash": "ea7a088004f8ea329119bb4ec0b9585a",
+    "semantic_hash": "ea7a088004f8ea329119bb4ec0b9585a"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/config/MercadoXJpaScanningConfig.java": {
+    "mtime": 1786714760.3961468,
+    "ast_hash": "b11ad9d34b7037c9c67fa7e237d345b1",
+    "semantic_hash": "b11ad9d34b7037c9c67fa7e237d345b1"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/config/QueryDSLInfrastructureConfig.java": {
+    "mtime": 1786714760.3965173,
+    "ast_hash": "184cc1f2edbe363226b6b30ef88bb4c9",
+    "semantic_hash": "184cc1f2edbe363226b6b30ef88bb4c9"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/predicate/ItemPredicateFactory.java": {
+    "mtime": 1786714760.3967838,
+    "ast_hash": "6bf19e10858dfc96c7e6383127c07f0e",
+    "semantic_hash": "6bf19e10858dfc96c7e6383127c07f0e"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/predicate/OrgPredicateFactory.java": {
+    "mtime": 1786714760.3974018,
+    "ast_hash": "283a79233924ad208c50e47a33fad71e",
+    "semantic_hash": "283a79233924ad208c50e47a33fad71e"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/predicate/UserPredicateFactory.java": {
+    "mtime": 1786714760.3977377,
+    "ast_hash": "cc62f1011e286927aa9cc72cd5d5bb13",
+    "semantic_hash": "cc62f1011e286927aa9cc72cd5d5bb13"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/querydsl/OrgAwareQueryFactory.java": {
+    "mtime": 1786714760.3979263,
+    "ast_hash": "ca6bf002e0ba61c676a2f4f3df7c8b37",
+    "semantic_hash": "ca6bf002e0ba61c676a2f4f3df7c8b37"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/BaseRepository.java": {
+    "mtime": 1786714760.3981364,
+    "ast_hash": "97c509989bf2c5c0631d0fcb168f1f67",
+    "semantic_hash": "97c509989bf2c5c0631d0fcb168f1f67"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/CategoryRepository.java": {
+    "mtime": 1786714760.3983123,
+    "ast_hash": "b2d308bd5a2d5d4e9cf066010784dcce",
+    "semantic_hash": "b2d308bd5a2d5d4e9cf066010784dcce"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/ConversationMessageRepository.java": {
+    "mtime": 1787030039.865112,
+    "ast_hash": "fad43b7dcfa7dc215b1245dae6f17744",
+    "semantic_hash": "fad43b7dcfa7dc215b1245dae6f17744"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/ConversationRepository.java": {
+    "mtime": 1787030038.252698,
+    "ast_hash": "9ab7d22d2333c9a1a5f1d77b78f13731",
+    "semantic_hash": "9ab7d22d2333c9a1a5f1d77b78f13731"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/InventoryRepository.java": {
+    "mtime": 1786714760.3984654,
+    "ast_hash": "809a07aa62ad7bc9820ae8acc799518a",
+    "semantic_hash": "809a07aa62ad7bc9820ae8acc799518a"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/ItemRepository.java": {
+    "mtime": 1786714760.3986974,
+    "ast_hash": "77b48d7422d3107071f7266a15f34f3a",
+    "semantic_hash": "77b48d7422d3107071f7266a15f34f3a"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/LeadRepository.java": {
+    "mtime": 1786714760.398851,
+    "ast_hash": "524f02acd59c592fd8b52201852ff757",
+    "semantic_hash": "524f02acd59c592fd8b52201852ff757"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/LocationRepository.java": {
+    "mtime": 1786714760.399002,
+    "ast_hash": "705eaceebc2ad5a645feaa812958fc83",
+    "semantic_hash": "705eaceebc2ad5a645feaa812958fc83"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/NotificationTemplateRepository.java": {
+    "mtime": 1786714760.399153,
+    "ast_hash": "411a7f1229620ec7f71ca82ecb9c62be",
+    "semantic_hash": "411a7f1229620ec7f71ca82ecb9c62be"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/OrderItemRepository.java": {
+    "mtime": 1786714760.3992956,
+    "ast_hash": "1a7cbe019ecb269835fc21db34388fe2",
+    "semantic_hash": "1a7cbe019ecb269835fc21db34388fe2"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/OrderRepository.java": {
+    "mtime": 1786714760.3994312,
+    "ast_hash": "747e2f3cf1f02bfc3c1c31b5ea3d8b0b",
+    "semantic_hash": "747e2f3cf1f02bfc3c1c31b5ea3d8b0b"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/OrganizationRepository.java": {
+    "mtime": 1786714760.399578,
+    "ast_hash": "6d41a6179817a2f18f5b284f0635b5a0",
+    "semantic_hash": "6d41a6179817a2f18f5b284f0635b5a0"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/OrganizationWhatsAppConfigRepository.java": {
+    "mtime": 1787030035.6997607,
+    "ast_hash": "174d6e0ebb3061f77e55eebb33d0a10c",
+    "semantic_hash": "174d6e0ebb3061f77e55eebb33d0a10c"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/RoleRepository.java": {
+    "mtime": 1786714760.3997364,
+    "ast_hash": "91871eb4b9241162f9de23d5c5660aa7",
+    "semantic_hash": "91871eb4b9241162f9de23d5c5660aa7"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/ShipmentRepository.java": {
+    "mtime": 1786714760.3998973,
+    "ast_hash": "d71eed4afda421d9fd81d303264349d6",
+    "semantic_hash": "d71eed4afda421d9fd81d303264349d6"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/UserNotificationPreferenceRepository.java": {
+    "mtime": 1786714760.4001403,
+    "ast_hash": "e23a04e2c3e625a80b58cf551e96b906",
+    "semantic_hash": "e23a04e2c3e625a80b58cf551e96b906"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/UserRepository.java": {
+    "mtime": 1786714760.4002833,
+    "ast_hash": "6cb9f06a428a10b1467295fdbd5b7e80",
+    "semantic_hash": "6cb9f06a428a10b1467295fdbd5b7e80"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/custom/CustomItemRepository.java": {
+    "mtime": 1786714760.4004765,
+    "ast_hash": "87e005a93ef3c98d54c8057318ef081d",
+    "semantic_hash": "87e005a93ef3c98d54c8057318ef081d"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/custom/CustomNotificationTemplateRepository.java": {
+    "mtime": 1786714760.4007254,
+    "ast_hash": "4291e2b65da4778e4486481177c9d8f7",
+    "semantic_hash": "4291e2b65da4778e4486481177c9d8f7"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/custom/CustomOrderRepository.java": {
+    "mtime": 1786714760.4009435,
+    "ast_hash": "5e89bb520c070cec510bbc3340cacd0e",
+    "semantic_hash": "5e89bb520c070cec510bbc3340cacd0e"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/custom/CustomOrgRepository.java": {
+    "mtime": 1786714760.4010918,
+    "ast_hash": "8ce65e9b271c5ec5ede3b992df3d4519",
+    "semantic_hash": "8ce65e9b271c5ec5ede3b992df3d4519"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/custom/CustomUserRepository.java": {
+    "mtime": 1786714760.4012306,
+    "ast_hash": "74bd3e726a298697d8e3499f93ed05d3",
+    "semantic_hash": "74bd3e726a298697d8e3499f93ed05d3"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/custom/impl/CustomItemRepositoryImpl.java": {
+    "mtime": 1786714760.4014297,
+    "ast_hash": "cf7451922b12c0cbf0d9dc150f2b47b4",
+    "semantic_hash": "cf7451922b12c0cbf0d9dc150f2b47b4"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/custom/impl/CustomNotificationTemplateRepositoryImpl.java": {
+    "mtime": 1786714760.4016116,
+    "ast_hash": "696773afef5bb2bfce03939b4941b0db",
+    "semantic_hash": "696773afef5bb2bfce03939b4941b0db"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/custom/impl/CustomOrderRepositoryImpl.java": {
+    "mtime": 1786714760.401846,
+    "ast_hash": "defe81b5e9257b3f6948bbd4084097d7",
+    "semantic_hash": "defe81b5e9257b3f6948bbd4084097d7"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/custom/impl/CustomOrgRepositoryImpl.java": {
+    "mtime": 1786714760.4020205,
+    "ast_hash": "64ef6bb87604a6dd2a3dfd799943256b",
+    "semantic_hash": "64ef6bb87604a6dd2a3dfd799943256b"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/repository/custom/impl/CustomUserRepositoryImpl.java": {
+    "mtime": 1786714760.4025013,
+    "ast_hash": "263aaf3420780ebd3200be4bbbce3e51",
+    "semantic_hash": "263aaf3420780ebd3200be4bbbce3e51"
+  },
+  "src/main/java/hn/shadowcore/mercadox/library/jpa/util/DisableHibernateFilters.java": {
+    "mtime": 1786714760.402691,
+    "ast_hash": "7621789b940fc2accfa7dbe7231d71a1",
+    "semantic_hash": "7621789b940fc2accfa7dbe7231d71a1"
+  },
+  "src/main/resources/archetype-resources/pom.xml": {
+    "mtime": 1744733434.9325423,
+    "ast_hash": "c36cc4bd02aaa8fae9bb6e5d86b4f81c",
+    "semantic_hash": "c36cc4bd02aaa8fae9bb6e5d86b4f81c"
+  },
+  "src/main/resources/archetype-resources/src/main/java/App.java": {
+    "mtime": 1744733434.9330168,
+    "ast_hash": "89d3dba38591638f59298e4d94c2b511",
+    "semantic_hash": "89d3dba38591638f59298e4d94c2b511"
+  },
+  "src/main/resources/archetype-resources/src/test/java/AppTest.java": {
+    "mtime": 1744733434.9334486,
+    "ast_hash": "c5bff0e4a7793ae27cd1a89d190d2973",
+    "semantic_hash": "c5bff0e4a7793ae27cd1a89d190d2973"
+  },
+  "src/main/resources/schema.sql": {
+    "mtime": 1787202037.8941278,
+    "ast_hash": "6b7e8b3d4cf1da8d01e3040dc68f29f6",
+    "semantic_hash": "6b7e8b3d4cf1da8d01e3040dc68f29f6"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/CategoryRepositoryIntTest.java": {
+    "mtime": 1786714760.4038303,
+    "ast_hash": "3b3258a855c70273b12c95570ac83d0b",
+    "semantic_hash": "3b3258a855c70273b12c95570ac83d0b"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/ItemRepositoryIntTest.java": {
+    "mtime": 1786714760.404068,
+    "ast_hash": "a52f09f789cca36542d2035f700a11b5",
+    "semantic_hash": "a52f09f789cca36542d2035f700a11b5"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/NotificationTemplateRepositoryIntTest.java": {
+    "mtime": 1786714760.404202,
+    "ast_hash": "80ac4474e688a02a61a9b34e866682b8",
+    "semantic_hash": "80ac4474e688a02a61a9b34e866682b8"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/OrderRepositoryIntTest.java": {
+    "mtime": 1786714760.4043412,
+    "ast_hash": "7b731d5d2a734c7256006bf863e8a8f3",
+    "semantic_hash": "7b731d5d2a734c7256006bf863e8a8f3"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/OrganizationRepositoryIntTest.java": {
+    "mtime": 1786714760.4044867,
+    "ast_hash": "d2ea1d07ed259f89798b6d8e79ca9e95",
+    "semantic_hash": "d2ea1d07ed259f89798b6d8e79ca9e95"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/RoleRepositoryIntTest.java": {
+    "mtime": 1786714760.4046228,
+    "ast_hash": "8f09ada2892a0175c11f19f77495953d",
+    "semantic_hash": "8f09ada2892a0175c11f19f77495953d"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/ShipmentRepositoryIntTest.java": {
+    "mtime": 1786714760.4048507,
+    "ast_hash": "9a7ad6aea2638d2a96f9b58186262357",
+    "semantic_hash": "9a7ad6aea2638d2a96f9b58186262357"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/UserRepositoryIntTest.java": {
+    "mtime": 1786714760.4049933,
+    "ast_hash": "52eddab6ac11513ec645227b6703076e",
+    "semantic_hash": "52eddab6ac11513ec645227b6703076e"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/base/AbstractIntegrationTest.java": {
+    "mtime": 1786714760.4052463,
+    "ast_hash": "4e791068a9031434e4f2bd0402ab1f93",
+    "semantic_hash": "4e791068a9031434e4f2bd0402ab1f93"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/base/BaseTestEntities.java": {
+    "mtime": 1786714760.4054687,
+    "ast_hash": "377a0065996e3ef71b920e2747fdfcf8",
+    "semantic_hash": "377a0065996e3ef71b920e2747fdfcf8"
+  },
+  "src/test/java/hn/mercadox/library/jpa/repository/base/H2BaseJpaIntegrationTest.java": {
+    "mtime": 1786714760.4060256,
+    "ast_hash": "80d603336fe9d0ffe710b482cec6d980",
+    "semantic_hash": "80d603336fe9d0ffe710b482cec6d980"
+  }
+}

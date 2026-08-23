@@ -46,10 +46,12 @@ public class JpaConfig {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(
+            DataSource dataSource,
+            @Value("${mercadox.jpa.entity-packages:hn.shadowcore.mercadox.library.entity}") String entityPackages) {
         var factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource);
-        factoryBean.setPackagesToScan("hn.shadowcore.mercadox.library.entity");
+        factoryBean.setPackagesToScan(entityPackages.split(","));
 
         var vendorAdapter = new HibernateJpaVendorAdapter();
         factoryBean.setJpaVendorAdapter(vendorAdapter);
