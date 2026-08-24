@@ -1,13 +1,13 @@
 -- =============================================================================
 -- Seed data — Altura Forge Software
 --
--- Repeatable Flyway migration (R__ prefix): runs AFTER all versioned migrations,
--- and re-applies whenever this file's checksum changes. All statements are
--- idempotent (INSERT ... WHERE NOT EXISTS), so replays are safe.
---
--- This lives under db/seed, NOT db/migration, so it is excluded from the schema
--- version line and from prod. Load it locally by adding db/seed to
--- spring.flyway.locations in the "local" profile (see application-local.yml).
+-- Manual dev-only seed script — NOT managed by Flyway. Run it by hand against
+-- your local database whenever you want fixture data, e.g.:
+--   docker exec -i mercadox-postgres psql -U postgres -d mercado_x < this-file
+-- (or open it in DBeaver and execute). All statements are idempotent
+-- (INSERT ... WHERE NOT EXISTS), so it is safe to run repeatedly. Flyway manages
+-- schema/tables only and never scans this file, so it stays out of the schema
+-- version line and out of prod.
 --
 -- Fixed UUIDs (dev-stable, easy to reference in tests and logs):
 --   Org            11111111-1111-1111-1111-111111111111
