@@ -46,6 +46,9 @@ public class H2JpaTestConfig {
                 .username("sa")
                 .password("").build();
 
+        // Only the versioned schema migrations run for tests. Seed data lives under
+        // db/seed (loaded via Flyway's "local" profile in the services) and is
+        // intentionally excluded here — integration tests build their own fixtures.
         Resource[] scripts = new PathMatchingResourcePatternResolver()
                 .getResources("classpath:db/migration/*.sql");
         Arrays.sort(scripts, Comparator.comparingInt(r -> {

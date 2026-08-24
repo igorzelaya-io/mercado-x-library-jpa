@@ -1,3 +1,4 @@
 hn.shadowcore.mercadox.library.jpa.config.H2JpaTestConfig
 hn.shadowcore.mercadox.library.jpa.config.JpaConfig
 hn.shadowcore.mercadox.library.jpa.config.MercadoXJpaScanningConfig
+hn.shadowcore.mercadox.library.jpa.config.FlywaySeedLocationConfig

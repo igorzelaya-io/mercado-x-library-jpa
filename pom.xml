@@ -61,6 +61,18 @@
       <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
 
+    <!--
+      Flyway is optional: it is only needed so this library can compile the
+      seed-location auto-configuration (FlywaySeedLocationConfig). Consuming
+      services (core/oauth/ai) already bring flyway-core; services without it
+      (email) simply skip the auto-config via @ConditionalOnClass.
+    -->
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <optional>true</optional>
+    </dependency>
+
     <dependency>
       <groupId>jakarta.persistence</groupId>
       <artifactId>jakarta.persistence-api</artifactId>
