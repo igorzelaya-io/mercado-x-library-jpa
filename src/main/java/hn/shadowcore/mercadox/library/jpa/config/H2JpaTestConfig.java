@@ -4,6 +4,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import hn.shadowcore.mercadox.library.jpa.querydsl.OrgAwareQueryFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +17,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
+import org.springframework.orm.hibernate5.SpringBeanContainer;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -68,7 +70,8 @@ public class H2JpaTestConfig {
     @Bean
     @Primary
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(
-            DataSource dataSource
+            DataSource dataSource,
+            ConfigurableListableBeanFactory beanFactory
     ) {
 
         LocalContainerEntityManagerFactoryBean emf =
@@ -88,6 +91,12 @@ public class H2JpaTestConfig {
 
         props.put("hibernate.show_sql", true);
         props.put("hibernate.format_sql", true);
+
+        // Spring Boot's own JpaBaseConfiguration wires this automatically; this config
+        // builds the EntityManagerFactory by hand and bypasses that path, so without this,
+        // Hibernate can't resolve @Component-based AttributeConverters (e.g.
+        // EncryptedStringConverter) that need Spring to inject their dependencies.
+        props.put("hibernate.resource.beans.container", new SpringBeanContainer(beanFactory));
 
         emf.setJpaPropertyMap(props);
 
