@@ -1,11 +1,16 @@
 package hn.shadowcore.mercadox.library.jpa.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import hn.shadowcore.mercadox.context.crypto.EncryptionAutoConfiguration;
+import hn.shadowcore.mercadox.context.crypto.EnvVarMasterKeyService;
+import hn.shadowcore.mercadox.context.crypto.MasterKeyProperties;
+import hn.shadowcore.mercadox.library.entity.crypto.MasterKeyService;
 import hn.shadowcore.mercadox.library.jpa.querydsl.OrgAwareQueryFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +30,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,8 +42,23 @@ import java.util.UUID;
 @Profile("test")
 @EnableAspectJAutoProxy
 @ConditionalOnClass(EntityManager.class)
-@Import(QueryDSLInfrastructureConfig.class)
+@Import({QueryDSLInfrastructureConfig.class, EncryptionAutoConfiguration.class})
 public class H2JpaTestConfig {
+
+    // EncryptionAutoConfiguration (imported above) is @ConditionalOnProperty("encryption.master-key").
+    // Consumers that don't set that property (no application.yml/properties under
+    // src/test/resources) never satisfy it, so this bean is the only MasterKeyService and backs
+    // nothing off. Consumers that DO set the property (e.g. oauth's application-test.yml, needed
+    // for their own encryption tests) satisfy EncryptionAutoConfiguration's condition, so its bean
+    // registers too; @ConditionalOnMissingBean here makes this one defer to that bean instead of
+    // colliding with it.
+    @Bean
+    @ConditionalOnMissingBean(MasterKeyService.class)
+    public MasterKeyService masterKeyService() {
+        byte[] key = new byte[32];
+        new SecureRandom().nextBytes(key);
+        return new EnvVarMasterKeyService(new MasterKeyProperties(Base64.getEncoder().encodeToString(key)));
+    }
 
     @Bean
     @Primary
