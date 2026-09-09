@@ -2,14 +2,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>mercado-x-library-jpa</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.2</version>
   <name>Archetype - mercado-x-library-jpa</name>
   <url>http://maven.apache.org</url>
 
   <parent>
     <groupId>hn.shadowcore</groupId>
     <artifactId>mercado-x-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
   </parent>
 
   <repositories>
@@ -47,18 +47,30 @@
     <dependency>
       <groupId>hn.shadowcore</groupId>
       <artifactId>mercado-x-library-entity</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>1.0.0</version>
     </dependency>
 
     <dependency>
       <groupId>hn.shadowcore</groupId>
       <artifactId>mercado-x-context</artifactId>
-      <version>1.0.1-SNAPSHOT</version>
+      <version>1.0.1</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+    <!--
+      Flyway is optional: it is only needed so this library can compile the
+      seed-location auto-configuration (FlywaySeedLocationConfig). Consuming
+      services (core/oauth/ai) already bring flyway-core; services without it
+      (email) simply skip the auto-config via @ConditionalOnClass.
+    -->
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <optional>true</optional>
     </dependency>
 
     <dependency>

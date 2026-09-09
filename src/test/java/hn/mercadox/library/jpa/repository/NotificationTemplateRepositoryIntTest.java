@@ -3,7 +3,6 @@ package hn.mercadox.library.jpa.repository;
 import hn.mercadox.library.jpa.repository.base.H2BaseJpaIntegrationTest;
 import hn.shadowcore.mercadox.library.entity.model.core.NotificationTemplate;
 import hn.shadowcore.mercadox.library.entity.model.enums.LanguageKey;
-import hn.shadowcore.mercadox.library.entity.model.enums.NotificationTemplateName;
 import hn.shadowcore.mercadox.library.entity.model.enums.TemplateChannel;
 import hn.shadowcore.mercadox.library.jpa.repository.NotificationTemplateRepository;
 import org.junit.jupiter.api.Test;
@@ -24,7 +23,7 @@ class NotificationTemplateRepositoryIntTest extends H2BaseJpaIntegrationTest {
 
         final NotificationTemplate invalidTemplate = NotificationTemplate
                 .builder()
-                .templateKey(NotificationTemplateName.ORDER_CONFIRMATION_TEMPLATE.toString())
+                .templateKey("ORDER_CONFIRMATION_TEMPLATE")
                 .templateChannel(TemplateChannel.WHATSAPP)
                 .languageCode(LanguageKey.SPANISH_MEX.getName())
                 .subject("Invalid template")
@@ -33,7 +32,7 @@ class NotificationTemplateRepositoryIntTest extends H2BaseJpaIntegrationTest {
                 .build();
 
         final NotificationTemplate template = NotificationTemplate.builder()
-                .templateKey(NotificationTemplateName.USER_VALIDATION_TEMPLATE.toString())
+                .templateKey("USER_VALIDATION_TEMPLATE")
                 .templateChannel(TemplateChannel.EMAIL)
                 .languageCode(LanguageKey.ENGLISH.getName())
                 .subject("Test Email !")
@@ -47,8 +46,7 @@ class NotificationTemplateRepositoryIntTest extends H2BaseJpaIntegrationTest {
         persistAll(template, invalidTemplate);
 
         NotificationTemplate retrievedTemplate = templateRepository
-                .findByOrgIdNameAndChannel(NotificationTemplateName.USER_VALIDATION_TEMPLATE.toString(),
-                        TemplateChannel.EMAIL);
+                .findByOrgIdNameAndChannel("USER_VALIDATION_TEMPLATE", TemplateChannel.EMAIL);
 
         assertThat(retrievedTemplate).isNotNull();
         assertThat(retrievedTemplate.getOrgId()).isEqualTo(organization.getId());
