@@ -45,6 +45,8 @@ import java.util.UUID;
 @Import({QueryDSLInfrastructureConfig.class, EncryptionAutoConfiguration.class})
 public class H2JpaTestConfig {
 
+    private static final SecureRandom SECURE_RANDOM = new SecureRandom();
+
     // EncryptionAutoConfiguration (imported above) requires encryption.master-key.value.
     // Consumers that don't set that property (no application.yml/properties under
     // src/test/resources) never satisfy it, so this bean is the only MasterKeyService and backs
@@ -56,7 +58,7 @@ public class H2JpaTestConfig {
     @ConditionalOnMissingBean(MasterKeyService.class)
     public MasterKeyService masterKeyService() {
         byte[] key = new byte[32];
-        new SecureRandom().nextBytes(key);
+        SECURE_RANDOM.nextBytes(key);
         return new EnvVarMasterKeyService(new MasterKeyProperties(Base64.getEncoder().encodeToString(key)));
     }
 
