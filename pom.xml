@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>mercado-x-library-jpa</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <name>Archetype - mercado-x-library-jpa</name>
   <url>http://maven.apache.org</url>
 
@@ -53,7 +53,7 @@
     <dependency>
       <groupId>hn.shadowcore</groupId>
       <artifactId>mercado-x-context</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
     </dependency>
 
     <dependency>

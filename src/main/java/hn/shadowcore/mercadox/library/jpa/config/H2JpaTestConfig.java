@@ -45,7 +45,7 @@ import java.util.UUID;
 @Import({QueryDSLInfrastructureConfig.class, EncryptionAutoConfiguration.class})
 public class H2JpaTestConfig {
 
-    // EncryptionAutoConfiguration (imported above) is @ConditionalOnProperty("encryption.master-key").
+    // EncryptionAutoConfiguration (imported above) requires encryption.master-key.value.
     // Consumers that don't set that property (no application.yml/properties under
     // src/test/resources) never satisfy it, so this bean is the only MasterKeyService and backs
     // nothing off. Consumers that DO set the property (e.g. oauth's application-test.yml, needed
