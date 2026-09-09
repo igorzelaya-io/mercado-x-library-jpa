@@ -1,7 +1,6 @@
 package hn.mercadox.library.jpa.repository.base;
 
 
-import hn.shadowcore.mercadox.context.crypto.EncryptionAutoConfiguration;
 import hn.shadowcore.mercadox.context.utils.OrgIdContextHolder;
 import hn.shadowcore.mercadox.library.jpa.aspect.HibernateFilterAspect;
 import hn.shadowcore.mercadox.library.jpa.aspect.HibernateFilterDisablingAspect;
@@ -23,8 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
         H2JpaTestConfig.class,
         MercadoXJpaScanningConfig.class,
         HibernateFilterAspect.class,
-        HibernateFilterDisablingAspect.class,
-        EncryptionAutoConfiguration.class
+        HibernateFilterDisablingAspect.class
 })
 // Not a @SpringBootTest, so no application.yml is loaded automatically — this narrow
 // context config needs its own explicit property source for the required master key.
