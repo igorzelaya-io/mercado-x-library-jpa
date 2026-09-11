@@ -25,7 +25,7 @@ This is the module's core design decision, so it's worth explaining in detail ra
 
 Every entity extends `TenantBaseEntity`, which declares a Hibernate `@FilterDef` named `orgIdFilter`. On its own, a `@FilterDef` does nothing — it has to be explicitly enabled per Hibernate `Session`, and it's easy to forget in a service method and accidentally return data across tenants.
 
-`HibernateFilterAspect` closes that gap by intercepting **every method call into any repository** in this module (`execution(* hn.shadowcore.mercadox.library.jpa.repository..*(..))`) and enabling two filters before the query runs:
+`HibernateFilterAspect` closes that gap by intercepting **every method call into any repository** in this module (`execution(* hn.alturaforge.mercadox.library.jpa.repository..*(..))`) and enabling two filters before the query runs:
 
 - `enabledEntityFilter` — excludes soft-deleted/disabled rows
 - `orgIdFilter` — scoped to `OrgIdContextHolder.getTenantId()` (populated per-request by `TenantValidatorFilter` in `mercado-x-context`)

@@ -7,7 +7,7 @@
   <url>http://maven.apache.org</url>
 
   <parent>
-    <groupId>hn.shadowcore</groupId>
+    <groupId>hn.alturaforge</groupId>
     <artifactId>mercado-x-parent</artifactId>
     <version>1.0.0</version>
   </parent>
@@ -45,13 +45,13 @@
     </dependency>
 
     <dependency>
-      <groupId>hn.shadowcore</groupId>
+      <groupId>hn.alturaforge</groupId>
       <artifactId>mercado-x-library-entity</artifactId>
       <version>1.0.0</version>
     </dependency>
 
     <dependency>
-      <groupId>hn.shadowcore</groupId>
+      <groupId>hn.alturaforge</groupId>
       <artifactId>mercado-x-context</artifactId>
       <version>1.0.1</version>
     </dependency>

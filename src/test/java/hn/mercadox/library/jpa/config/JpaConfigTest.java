@@ -1,6 +1,6 @@
 package hn.mercadox.library.jpa.config;
 
-import hn.shadowcore.mercadox.library.jpa.config.JpaConfig;
+import hn.alturaforge.mercadox.library.jpa.config.JpaConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.orm.hibernate5.SpringBeanContainer;
@@ -19,7 +19,7 @@ class JpaConfigTest {
         ConfigurableListableBeanFactory beanFactory = mock(ConfigurableListableBeanFactory.class);
 
         LocalContainerEntityManagerFactoryBean factoryBean = new JpaConfig()
-                .entityManagerFactory(dataSource, "hn.shadowcore.mercadox.library.entity", beanFactory);
+                .entityManagerFactory(dataSource, "hn.alturaforge.mercadox.library.entity", beanFactory);
 
         assertThat(factoryBean.getDataSource()).isSameAs(dataSource);
         assertThat(factoryBean.getJpaPropertyMap())

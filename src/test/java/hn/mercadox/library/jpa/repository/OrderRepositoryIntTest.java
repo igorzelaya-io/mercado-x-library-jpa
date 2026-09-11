@@ -1,12 +1,12 @@
 package hn.mercadox.library.jpa.repository;
 
-import hn.shadowcore.mercadox.library.entity.model.auth.User;
-import hn.shadowcore.mercadox.library.entity.model.core.Order;
-import hn.shadowcore.mercadox.library.entity.model.enums.OrderStatus;
+import hn.alturaforge.mercadox.library.entity.model.auth.User;
+import hn.alturaforge.mercadox.library.entity.model.core.Order;
+import hn.alturaforge.mercadox.library.entity.model.enums.OrderStatus;
 import hn.mercadox.library.jpa.repository.base.H2BaseJpaIntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import hn.shadowcore.mercadox.library.jpa.repository.OrderRepository;
+import hn.alturaforge.mercadox.library.jpa.repository.OrderRepository;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;

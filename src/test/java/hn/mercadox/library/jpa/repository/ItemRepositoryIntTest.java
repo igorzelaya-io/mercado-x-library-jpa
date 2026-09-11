@@ -1,13 +1,13 @@
 package hn.mercadox.library.jpa.repository;
 
-import hn.shadowcore.mercadox.library.entity.model.core.Category;
-import hn.shadowcore.mercadox.library.entity.model.core.Inventory;
-import hn.shadowcore.mercadox.library.entity.model.core.Item;
+import hn.alturaforge.mercadox.library.entity.model.core.Category;
+import hn.alturaforge.mercadox.library.entity.model.core.Inventory;
+import hn.alturaforge.mercadox.library.entity.model.core.Item;
 import hn.mercadox.library.jpa.repository.base.H2BaseJpaIntegrationTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import hn.shadowcore.mercadox.library.jpa.repository.ItemRepository;
+import hn.alturaforge.mercadox.library.jpa.repository.ItemRepository;
 
 import java.math.BigDecimal;
 

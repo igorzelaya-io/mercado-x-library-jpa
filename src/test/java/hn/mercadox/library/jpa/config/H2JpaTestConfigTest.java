@@ -1,7 +1,7 @@
 package hn.mercadox.library.jpa.config;
 
-import hn.shadowcore.mercadox.library.entity.crypto.MasterKeyService;
-import hn.shadowcore.mercadox.library.jpa.config.H2JpaTestConfig;
+import hn.alturaforge.mercadox.library.entity.crypto.MasterKeyService;
+import hn.alturaforge.mercadox.library.jpa.config.H2JpaTestConfig;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

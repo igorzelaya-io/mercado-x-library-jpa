@@ -1,6 +1,6 @@
 package hn.mercadox.library.jpa.repository.base;
 
-import hn.shadowcore.mercadox.context.utils.OrgIdContextHolder;
+import hn.alturaforge.mercadox.context.utils.OrgIdContextHolder;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.junit.jupiter.api.AfterEach;

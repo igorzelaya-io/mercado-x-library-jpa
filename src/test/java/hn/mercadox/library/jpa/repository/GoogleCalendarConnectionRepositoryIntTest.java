@@ -1,8 +1,8 @@
 package hn.mercadox.library.jpa.repository;
 
 import hn.mercadox.library.jpa.repository.base.H2BaseJpaIntegrationTest;
-import hn.shadowcore.mercadox.library.entity.model.enums.GoogleCalendarConnectionStatus;
-import hn.shadowcore.mercadox.library.jpa.repository.GoogleCalendarConnectionRepository;
+import hn.alturaforge.mercadox.library.entity.model.enums.GoogleCalendarConnectionStatus;
+import hn.alturaforge.mercadox.library.jpa.repository.GoogleCalendarConnectionRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,6 +1,7 @@
 CREATE TABLE ai.conversation_message (
     id                    UUID        NOT NULL PRIMARY KEY,
-    conversation_id       UUID        NOT NULL REFERENCES ai.conversation(id),
+    conversation_id       UUID        NOT NULL CONSTRAINT fk_conversation_message_conversation
+                              REFERENCES ai.conversation(id) ON DELETE CASCADE,
     role                  VARCHAR(16) NOT NULL,
     content               TEXT        NOT NULL,
     anthropic_message_id  VARCHAR(128),

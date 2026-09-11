@@ -1,11 +1,11 @@
 package hn.mercadox.library.jpa.repository.base;
 
 
-import hn.shadowcore.mercadox.context.utils.OrgIdContextHolder;
-import hn.shadowcore.mercadox.library.jpa.aspect.HibernateFilterAspect;
-import hn.shadowcore.mercadox.library.jpa.aspect.HibernateFilterDisablingAspect;
-import hn.shadowcore.mercadox.library.jpa.config.H2JpaTestConfig;
-import hn.shadowcore.mercadox.library.jpa.config.MercadoXJpaScanningConfig;
+import hn.alturaforge.mercadox.context.utils.OrgIdContextHolder;
+import hn.alturaforge.mercadox.library.jpa.aspect.HibernateFilterAspect;
+import hn.alturaforge.mercadox.library.jpa.aspect.HibernateFilterDisablingAspect;
+import hn.alturaforge.mercadox.library.jpa.config.H2JpaTestConfig;
+import hn.alturaforge.mercadox.library.jpa.config.MercadoXJpaScanningConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,10 +1,10 @@
 package hn.mercadox.library.jpa.repository;
 
 import hn.mercadox.library.jpa.repository.base.H2BaseJpaIntegrationTest;
-import hn.shadowcore.mercadox.library.entity.model.core.NotificationTemplate;
-import hn.shadowcore.mercadox.library.entity.model.enums.LanguageKey;
-import hn.shadowcore.mercadox.library.entity.model.enums.TemplateChannel;
-import hn.shadowcore.mercadox.library.jpa.repository.NotificationTemplateRepository;
+import hn.alturaforge.mercadox.library.entity.model.core.NotificationTemplate;
+import hn.alturaforge.mercadox.library.entity.model.enums.LanguageKey;
+import hn.alturaforge.mercadox.library.entity.model.enums.TemplateChannel;
+import hn.alturaforge.mercadox.library.jpa.repository.NotificationTemplateRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
